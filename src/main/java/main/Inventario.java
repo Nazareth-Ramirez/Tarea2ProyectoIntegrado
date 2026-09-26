@@ -10,4 +10,7 @@ package main;
  */
 public class Inventario {
     
+    Producto[] p= new Producto[10];
+    
+    
 }

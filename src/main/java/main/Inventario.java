@@ -53,7 +53,7 @@ public class Inventario {
 
 
                 cantidad++;
-                JOptionPane.showMessageDialog( null,"Posiciones del arreglo ocupadas: "+ cantidad );
+                JOptionPane.showMessageDialog( null,"Posiciones del arreglo ocupadas: "+ cantidad+ "\nDe: " +productos.length);
 
                 JOptionPane.showMessageDialog( null,"Producto registrado correctamente" );
             
@@ -103,13 +103,16 @@ public class Inventario {
             for (int i = 0; i < productos.length; i++) {
                 if (productos[i] != null && productos[i].getCodigo() == buscarCodigo) {
                     indice = i;
-                    break;//porque solo va a buscar 1 producto no todos
-
+                     break;//porque solo va a buscar 1 producto no todos
                 }
+           
             }//fin del for
 
+           
             if (indice != -1) {
-                JOptionPane.showMessageDialog(null, "El producto con el codigo  " + buscarCodigo + " es: " + productos[indice].getNombre() + " esta en el indice: " + indice);
+                JOptionPane.showMessageDialog(null, "El producto que esta  buscando con el codigo  " + buscarCodigo + " \nes: " +productos[indice].getNombre() + "  esta en el indice: " + indice);
+            }else{
+                 JOptionPane.showMessageDialog(null, "Este codigo no existe");
             }
         }
         

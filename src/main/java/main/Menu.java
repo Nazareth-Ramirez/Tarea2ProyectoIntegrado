@@ -13,6 +13,7 @@ import javax.swing.JOptionPane;
 public class Menu {
     
     private int opcion;
+    private Inventario inventario=new Inventario();
     
     public void menuPrincipal(){
         
@@ -30,6 +31,32 @@ public class Menu {
                                                                 Seleccione una opcion
                                                                 
                                                                 """));
+            switch (opcion) {
+                case 1:
+                    inventario.registrarProducto();
+                    break;
+                case 2:
+                    inventario.mostrarProductos();
+                    break;
+                case 3:
+                    inventario.buscarProducto();
+                    break;
+                case 4:
+                    inventario.venderUnidades();
+                    break;
+                case 5:
+                    inventario.reabastecerProducto();
+                    break;
+                case 6:
+                    inventario.calcularValor();
+                    break;
+                case 7:
+                    JOptionPane.showMessageDialog(null, "Saliendo del sietema...");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Opcion inexistente, vuelva a intentar con una del menu");
+                    
+            }//Fin del switch
             
             
         }while(opcion!=7);

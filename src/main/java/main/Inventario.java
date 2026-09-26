@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 public class Inventario {
     
     //Este es el arreglo de 10 posiciones
-    private Producto[] productos = new Producto[3];
+    private Producto[] productos = new Producto[10];
     
     //Es la variable cantidad
     private int cantidad;

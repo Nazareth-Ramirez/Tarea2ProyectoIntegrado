@@ -36,8 +36,9 @@ public class Inventario {
                  
                     indice = i;
                     break;
-                }
-            }
+                }//fin del if
+                
+            }//fin del for
 
             // Si indice sigue siendo -1, el codigo no existe
             if (indice == -1) {
@@ -49,6 +50,7 @@ public class Inventario {
                 int cantidadDispo = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la cantidad disponible del producto:"));
 
 
+                //la variable cantidad es para saber donde guardar el siguiente producto
                 productos[cantidad] = new Producto(codigo, nombre,precio,cantidadDispo );
 
 
@@ -62,29 +64,32 @@ public class Inventario {
 
                 JOptionPane.showMessageDialog( null,"No se permiten codigos repetidos" );
             
-            }
+            }//fin del else
 
         } else {
 
             JOptionPane.showMessageDialog(null,"El inventario esta lleno...");
         
-        }
+        }//Fin del else
 
     }//Fin del metodo registrarProducto
 
     public void mostrarProductos() {
         if (productos[0] == null) {
             
+            //esto es para que las personas no puedan ingresar nada hasta que apreten la opcion 1
             JOptionPane.showMessageDialog(null, "Debe registrar los productos primero");
             
         } else {
             for (int i = 0; i < productos.length; i++) {
                 if (productos[i] != null) {
                     productos[i].informacionProducto();
-                }
+                }//fin del if
 
-            }
-        }
+            }//fin del for
+            
+        }//fin del else
+        
     }//Fin del metodo buscarProducto
 
     public void buscarProducto() {
@@ -114,7 +119,7 @@ public class Inventario {
             }else{
                  JOptionPane.showMessageDialog(null, "Este codigo no existe");
             }
-        }
+        }//fin del else
         
     }//Fin del metodo buscarProducto
 
@@ -133,7 +138,7 @@ public class Inventario {
                     indice = i;
                     break; // Se encontró el producto, detiene la búsqueda
                 }
-            }
+            }//fin del for
 
             //Procesar la venta fuera del ciclo según el resultado de la búsqueda
             if (indice != -1) {
@@ -152,7 +157,8 @@ public class Inventario {
                 // Este mensaje se muestra SOLO UNA VEZ si recorrió todo el arreglo y no lo halló
                 JOptionPane.showMessageDialog(null, "El producto no existe.");
             }
-        }
+        }//fin del else
+        
     }//Fin del metodo venderUnidades
 
     public void reabastecerProducto(){
@@ -190,9 +196,9 @@ public class Inventario {
             } else {
                 // Este mensaje se muestra SOLO UNA VEZ si recorrió todo el arreglo y no lo halló
                 JOptionPane.showMessageDialog(null, "El producto no existe.");
-            }
+            }//fin del else
 
-        }
+        }//fin del else
 
     }//Fin del metodo reabastecerProducto
     
@@ -211,11 +217,12 @@ public class Inventario {
                     total = total + (productos[i].getPrecio() * productos[i].getCantidadDisponible());
 
                 }
-            }
+            }//fin del for
 
             JOptionPane.showMessageDialog(null, String.format("El valor total del inventario es: %.2f", total));
 
-        }
-    }
+        }//fin del else
+        
+    }//fin del metodo calcularValor
 
 }//Fin de la clase

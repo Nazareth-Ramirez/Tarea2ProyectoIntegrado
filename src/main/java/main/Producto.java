@@ -67,7 +67,7 @@ public class Producto {
     }
     //fin de los get y set
     
-    
+    //metodo para mostrar la informacion en la clase inventario
     public void informacionProducto() {
         JOptionPane.showMessageDialog(null, "Informacion del producto" 
                 + "\nCodigo: " + codigo
